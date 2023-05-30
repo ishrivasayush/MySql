@@ -21,3 +21,121 @@ desc employee;
 describe employee;
 drop table employee;
 
+Craete tables and Insertion
+_________________________________________________________
+create table employee(
+firstname varchar(20),
+middlename varchar(20),
+lastname varchar(20),
+age int,
+salary int,
+location varchar(20)
+);
+
+select * from employee;
+
+INSERT INTO employee VALUES(
+    'Ayush',
+    'Narayan',
+    'Shrivastava',
+    25,
+    54500,
+    'Kanpur'
+);
+
+INSERT INTO employee(firstname,middlename,lastname,age,salary,location) VALUES('Abhay',
+    'Narayan',
+    'Shrivastava',
+    29,
+    54500,
+    'banglore'
+);
+
+\\ special symbols
+INSERT INTO employee(firstname,lastname,age,salary,location) VALUES('Abhinav',
+    'Shrivastava',
+    33,
+    54500,
+    'banglore'
+);
+
+// ' ''
+ INSERT INTO employee(firstname,lastname,age,salary,location) VALUES('Abhina\'v',
+    'Shrivastava',
+    33,
+    54500,
+    'banglore'
+);
+
+//Multiple Records
+ INSERT INTO employee(firstname,lastname,age,salary,location) VALUES("Abhina'v",
+    'Shrivastava',
+    33,
+    54500,
+    'banglore'
+),("Abhina'v",
+    'Shrivastava',
+    33,
+    54500,
+    'banglore'),
+    ("Abhina'v",
+    'Shrivastava',
+    33,
+    54500,
+    'banglore'
+);
+
+NULL
+// NULL VALUES
+nothing
+
+NOT NULL
+->not NULL vlaues are contained in the column
+
+create table employee(
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL
+);
+
+Defalut vlaues
+_______________________________________________________
+
+set the Defalut vlaues for column if we are not giving the vleues than it set as Defalut value on it.
+
+create table employee(
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+);
+
+INSERT INTO employee(firstname,lastname,age,salary) VALUES('Abhinav',
+    'Shrivastava',
+    33,
+    54500);
+
+INSERT INTO employee(firstname,lastname,age,salary,location) VALUES('Abhinav',
+    'Shrivastava',
+    33,
+    54500,
+    null);
+
+Combination of NOT NULL and Default
+->
+create table employee(
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+);
+
+
+
