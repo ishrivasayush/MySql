@@ -1,0 +1,23 @@
+Database
+________________________________________________________
+
+show databases;
+create database narainox;
+use narainox;
+drop database narainox;
+show databases;
+select database();
+
+Tables
+_______________________________________________________
+
+create table employee(
+name varchar(25),
+age int,
+salary float
+);
+show tables;
+desc employee;
+describe employee;
+drop table employee;
+
