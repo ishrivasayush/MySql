@@ -24,6 +24,12 @@ Mysql vs Sql
 Mysql is a RDBMS which holds the data.
 Sql is a lnaguage which is used to query relational database.
 
+CRUD
+create->insert command
+Read-> select
+update-> update
+delate-delete
+
 Database
 ________________________________________________________
 
@@ -229,11 +235,73 @@ PRIMARY KEY(id,name)
 //UNIQUE KEY
 -> you can have only one primary key and primary key cannot hold any NULL
 we should use primary ket whwn we have to uniquely identify each record
-
 ->unique key can hold NULL
-
 ->so the puspose of unique key is to make  sure the values do not have duplicate.
 ->we can have only one primary key but multiple unique keys in a table.
  
+Reading the data
+
+select all the columns
+select * from TableName
+
+select by columnnames
+select firstname,lastname from Tbalename
+
+select by applying a where clause (filter condition) 
+select * from where age>29;
+
+Bydefalut it is case insensitive
+select * from employee where firstname='Ayush';
+
+Making case senstive
+select * from employee where BINARY firstname='Ayush';
+
+// Alias
+as
+
+select firstname as name from employee;
+
+
+//Update- data muniplication 
+____________________________________
+
+update employee set lname='Sinha' where id=3;
+update employee set lname='Sinha';
+update employee set salary=salary+5600;
+
+//Delete
+____________________________________
+Delete from employee where id=3;
+Delete from employee;
+
+//Alter
+_____________________________________
+Alter is to alter the structure of the table.
+
+Alter table employee add column role varchar(20);
+Alter table employee drop column role;
+Alter table employee modify column fname varchar(30);
+Alter table employee drop primary key;
+Alter table employee add primary key(id);
+
+DDL vs DML
+____________________________________
+Data definition Language
+->deals with table structure
+-> craete,alter,drop
+
+Data manipulation Language
+->deals with the data directly
+->insert, update ,delete 
  
- 
+//removes all the records
+delete from  employee; -> DML
+-> delete the records one by one
+->slow
+
+//removes all the records 
+Truncate table employee; -> DDL 
+-> internally drop the table and recreates it.
+-> fast
+
+
