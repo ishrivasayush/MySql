@@ -1,3 +1,29 @@
+what is database?
+a collection of data hold this data in the form of a table.
+it provides the capability to access and manipulate the data.
+
+what is a Table?
+holds the data in the from of rows and columns, it is similar to spredsheet.
+
+Types
+
+relational Database
+->rows/columns related Tables
+-> sql server, Mysql,postress
+
+No-sql Database 
+-> key vlaues, documnets, graph
+cassendra, hbase, mongodb
+
+Structured query Language
+-> sql
+->used to query relational database.
+->It is a Language that is used to communicate with database.
+
+Mysql vs Sql
+Mysql is a RDBMS which holds the data.
+Sql is a lnaguage which is used to query relational database.
+
 Database
 ________________________________________________________
 
@@ -137,5 +163,77 @@ salary int NOT NULL,
 location varchar(20) NOT NULL Default 'Banglore'
 );
 
+Primary key
+-> uniquly identify the each record in the table.
+-> For a primary key NULL is not allowed and also a repeted values are not allowed.
 
 
+create table employee(
+id INT, 
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+);
+
+
+create table employee(
+id INT PRIMARY KEY, 
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+);
+
+create table employee(
+id INT, 
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+PRIMARY KEY(id)
+);
+
+//Composite primary key
+
+create table employee(
+id INT, 
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+PRIMARY KEY(id,name)
+);
+
+//AUTOINCREMENT
+
+create table employee(
+id INT AUTO_INCREMENT, 
+firstname varchar(20) NOT NULL,
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL Default 'Banglore'
+PRIMARY KEY(id,name)
+);
+
+//UNIQUE KEY
+-> you can have only one primary key and primary key cannot hold any NULL
+we should use primary ket whwn we have to uniquely identify each record
+
+->unique key can hold NULL
+
+->so the puspose of unique key is to make  sure the values do not have duplicate.
+->we can have only one primary key but multiple unique keys in a table.
+ 
+ 
+ 
