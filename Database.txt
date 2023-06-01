@@ -304,4 +304,56 @@ Truncate table employee; -> DDL
 -> internally drop the table and recreates it.
 -> fast
 
+Constraints
+->
+are used to limit the type of data that can go into table.
 
+Forign key
+-> A foreign key is a field in a one table that refers to the primary key of another table.
+
+selectedCourse is a foreign key in student table that refers to course_id (primary key)  in course table.
+__________________________________________________
+create table student(
+    studentId INT AUTO_INCREMENT,
+    studentFName varchar(20) NOT NULL,
+    studentMName varchar(20),
+    studentLName varchar(20) NOT NULL,
+    studentEmail varchar(30) NOT NULL,
+    studentPhone varchar(30) NOT NULL,
+    studentAlternatePhone varchar(30),
+    enrollmentDate timestamp DEFAULT CURRENT_TIMESTAMP() NOT NULL,
+    yearOfExperience INT NOT NULL,
+    studentCompany varchar(30),
+    batchDate varchar(30) NOT NULL,
+    SourceOfJoining varchar(30) NOT NULL,
+    location varchar(30) NOT NULL,
+    PRIMARY KEY(studentId),
+    unique KEY(studentEmail),
+    Forign KEY(selectedCourse) References course(courseId)
+);
+
+
+desc student;
+INSERT INTO student(studentFName,studentLName,studentEmail,
+studentPhone,yearOfExperience,
+studentCompany,batchDate,SourceOfJoining,location) VALUES('Ayush','Shrivastava','ayushrivastava2k3@gmail.com',
+'7355026076',3,'Infosys','2023-6-23','Linkedin','Kanpur');
+
+
+create table course(
+    courseId INT NOT NULL,
+    courseName varchar(30)
+    NOT NULL,
+    courseDurationMonth INT NOT NULL,
+    courseFee INT NOT NULL,
+    PRIMARY KEY(courseId),
+    
+);
+
+INSERT INTO student(studentFName,studentLName,studentEmail,
+studentPhone,selectedCourse,yearOfExperience,
+studentCompany,batchDate,SourceOfJoining,location) VALUES('Ayush','Shrivastava','ayushriastava26@gmail.com',
+'7355026076',5,3,'Infosys','2023-6-23','Linkedin','Kanpur');
+
+course Table -Parent we can't delete the record if it is exits in child table; 
+Student Table -child
