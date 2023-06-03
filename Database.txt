@@ -357,3 +357,58 @@ studentCompany,batchDate,SourceOfJoining,location) VALUES('Ayush','Shrivastava',
 
 course Table -Parent we can't delete the record if it is exits in child table; 
 Student Table -child
+
+Distinct
+____________________________________
+Only gives the unique values;
+
+Gives redudent data.
+->select location from student;
+
+unique values only.
+->select DISTINCT location from student;
+->select distinct  studentCompany from student;
+
+ORDER By
+==========
+
+for odering like sorting
+bydefault in Accending ORDER
+desc;
+-Decnding Order
+
+->select studentFName from student ORDER by studentFName;
+->select studentFName from student ORDER by yearOfExperience desc;
+->select studentFName from student ORDER by 1 desc;
+
+->select studentFName from student ORDER by 1,2;
+fisrt level sorting than second level sorting.
+
+limit
+======
+set the limit of data;
+
+->select * from student limit 3;
+
+get 3 candidate with least yearOfExperience;
+
+->select * from student order by yearOfExperience limit 3;
+
+want to know from which sources last 5 candidate have enrollmentDate
+
+->select  SourceOfJoining from student order by enrollmentDate desc limit 5;
+->select  DISTINCT SourceOfJoining from student order by enrollmentDate desc limit 5;
+
+last candidate
+->select * from student order by enrollmentDate desc limit 1;
+
+
+->select * from student order by enrollmentDate desc limit 0,3;
+-------last 3
+
+
+
+like
+======
+
+
