@@ -407,8 +407,46 @@ last candidate
 -------last 3
 
 
+create database student_records;
+use student_records;
+create table student_records(id int,firstName varchar(50),lastName varchar(50),address text,city varchar(50));
 
-like
-======
+describe student_records;
+desc student_records;
+show columns from student_records;
+
+show databases;
+show tables;
+select database();
+
+Alter table student_records Add column contact varchar(10);
+Alter table student_records Add column email varchar(20);
+alter table student_records modify column contact varchar(12);
+Alter table student_records drop column contact;
+Alter table student_records add  primary key(id);
+
+create table student(id int, name varchar(10),city varchar(10));
+drop table student;
+truncate table student_records;
+
+insert into student_records values(8,'abhay','Shrivastava','kidwai nagar','kanpur','ishriayush@gmail.com');
+insert into student_records(id,firstName,lastName,address,city,email) values(3,'abhay','Shrivastava','kidwai nagar','kanpur','ishriayush@gmail.com');
+
+update  student_records set firstName='Aditi' where  id=2;
+update  student_records set firstName='Aditi';
+
+delete from student_records where id=3;
+delete from student_records;
+
+select * from student_records;
+select distinct firstName from student_records;
+
+select * from student_records where id <> 1;
+select * from student_records where id>6;
+select * from student_records where id<6;
+select * from student_records where id<=6;
+select * from student_records where id>=6;
+
+
 
 
